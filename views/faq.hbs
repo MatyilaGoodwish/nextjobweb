@@ -1,0 +1,30 @@
+{{>header}}
+ 
+<section class="faq my-5">
+      <div class="container">
+
+        <div class="text-center p-2 my-4">
+          <h1 class="h1 border-bottom">Frequently Asked Questions</h1>
+      </div>
+      <h2 class="h2">We ready to answer your questions</h2>
+            
+        <ul class="faq-list list-group">
+
+  {{#each faqs}}
+        <li class="list-group-item">
+          <a data-toggle="collapse" class="collapsed" href="#faq{{id}}"> {{question}} <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
+          <div id="faq{{id}}" class="collapse" data-parent=".faq-list">
+            <p>
+              {{answer}}
+             </p>
+          </div>
+        </li>
+        {{/each}}
+        </ul> 
+
+
+      </div>
+    </section><!-- End Frequenty Asked Questions Section -->
+
+
+{{>footer}}

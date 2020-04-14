@@ -1,0 +1,22 @@
+-var title = "Login"
+-var description = "Accounts management"
+
+include partials/header.pug
+
+div.container
+    h1.h1 #{loginStatus}
+    div.row
+        div.col-md-4 
+        div.col-md-4.my-5
+            form(action="/login",id="login", method="POST")
+                label(for="email")  Email 
+                input(type="email", name="email", required, id="email", class="form-control", autocomplete="email")
+                p.my-3
+                label(for="password")  Password 
+                input(type="password",name="password", id="password", class="form-control", autocomplete="password")
+                p.my-5
+                    input(type="submit", value="Login", class="btn btn-primary")
+                p.my-5.
+                    #{notification}
+
+include partials/footer.pug

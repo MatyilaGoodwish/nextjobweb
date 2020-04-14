@@ -1,0 +1,111 @@
+@import "https://bootswatch.com/4/journal/bootstrap.min.css";
+
+nav{
+    background: white!important;
+	font-size: 1.5em!important;
+}
+ 
+
+header > * { 
+		color: black!important;
+}
+
+h1{
+  font-family: 'Serif' arial!important;
+  font-weight: 800!important;
+  font-size: 5em!important;
+}
+h2{
+	font-size: 3.5em!important;
+}
+h3{
+	font-size: 3em!important;
+}
+
+footer> h3 {
+		text-align: left!important;
+}
+
+/* button  */
+.btn {
+	font-size: 1.3em!important;
+	background: rgb(0, 53, 0)!important;
+	color: white!important;
+    border: none; 
+    border-radius: 0.2em;
+}
+
+ 
+
+/* lists */
+ul > li{
+		font-size: 1em!important;
+}
+
+.row {
+		padding-top: 1em!important;
+        padding-bottom: 1em!important;     
+}
+
+/* images */
+div > img{
+    box-shadow: 0px 0px 10px 1px black;
+}
+
+
+h1,h2, h3, h4, h5{
+    font-kerning: initial;
+    font-variant-caps: petite-caps;
+	color:  black;
+	text-align: left;
+	font-family: 'Tahoma' arial;
+}
+p{
+	text-align: left;
+	font-size: 1em!important;
+	color: black;
+	border-width: 0.1em;
+}
+
+ 
+.slider-header{
+    color: orange;
+    font-weight: 800;
+}
+
+@media (max-width: 600px){
+    .banner-main{
+        animation: banner-anime 5s linear;
+        -webkit-animation: banner-anime 5s linear;
+        -moz-animation: banner-anime 5s linear;
+        -o-animation: banner-anime 5s linear;
+            background: url('assets/img/square-1000.png')  center no-repeat;
+            background-size: contain;
+            height: 400px;
+            width: 100%;
+            display: block; 
+    }
+    
+    .btn{
+        padding: 15px;
+    }
+   
+     
+}
+@media (min-width: 601px){
+
+   
+    /* Banner Theme*/
+    .banner-main{
+        animation: banner-anime 5s linear;
+        -webkit-animation: banner-anime 5s linear;
+        -moz-animation: banner-anime 5s linear;
+        -o-animation: banner-anime 5s linear;
+            background: url('assets/img/covid-2500x.png')  center no-repeat;
+            background-size: contain;
+            height: 400px;
+            width: 100%;
+            display: block; 
+    }
+                 
+}

@@ -1,0 +1,78 @@
+{{>header }}
+
+<script>
+    function Accounts(email, password) {
+        this.userName = email;
+        this.password = password;
+    }
+    Accounts.prototype.attempt = async function () {
+        try {
+            let result = await firebase.auth()
+            .signInWithEmailAndPassword(this.userName,this.password);
+            console.log(result)
+            if(result){
+                location.replace("/dashboard")
+            }
+        }catch(error){
+            console.log(error)
+            if(error.code === "auth/user-not-found"){
+                location.replace("/login/error")
+            }
+        }
+    }
+    Accounts.prototype.users = function (user) {
+        if (user) {
+            this.userName = user;
+            console.log(this.userName)
+        } else {
+            this.userName = user;
+            console.log(this.userName)
+        }
+    }
+    function loginForm(form) {
+        let accounts = new Accounts(form.email.value, form.password.value);
+
+        accounts.attempt() //attempt login
+    }
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Login</h1>
+            <p class="lead">
+                Login with your approved account to your dedicated portal.
+                Choose your account type and enter your login credentials.
+            </p>
+            <form class="my-3 shadow p-3" action="javascript:loginForm(this.loginform)" id="loginform" method="POST">
+                <p class="lead">
+                    <input placeholder="Email" type="email" name="email" id="email" class="form-control required">
+                </p>
+                <p class="lead">
+                    <input placeholder="Password" type="password" name="password" minlength="6" id="password" class="form-control" required>
+                </p>
+                <p class="lead">
+                    <select name="account" id="type" class="form-control">
+                        <option value="twitter">Twitter Promoter</option>
+                         <option value="blogger">Blog/Website Publisher</option>
+                         <option value="youtuber">YouTube Channel Owner</option>
+                    </select>
+                </p>
+                <br>
+                <hr>
+                <p class="lead">
+                    <input type="submit" value="LOGIN" class="btn btn-success">
+
+                   
+                </p>
+                <p class="lead bg-dark p-3">
+                     <a href="/how-to-register" class="btn btn-warning">HOW TO REGISTER</a>
+                </p>
+            </form>
+        </div>
+        <div class="col-md-6">
+           
+        </div>
+    </div>
+</div>
+
+{{>footer}}
